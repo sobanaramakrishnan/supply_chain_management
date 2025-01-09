@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Order List</h2>
+
+<!-- Form to create a new order -->
+<h3>Create a New Order</h3>
+<form method="post" action="/orders/">
+    <label for="product_id">Select Product</label>
+    <select name="product_id" id="product_id" required>
+        {% for product in products %}
+            <option value="{{ product.id }}">{{ product.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" id="quantity" required min="1">
+
+    <button type="submit">Place Order</button>
+</form>
+
+<!-- Existing table for displaying orders -->
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total Price</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.product.name }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.product.price }}</td>
+                <td>{{ order.total_price }}</td>
+                <td>{{ order.order_date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

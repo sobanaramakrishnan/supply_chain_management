@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section with a Banner Image -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the Supply Chain Management System</h1>
+        <p>Efficiently manage your inventory, orders, and products with our streamlined system.</p>
+        <a href="/products/" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-card">
+        <h3>Manage Products</h3>
+        <p>Easily add and update products with detailed information.</p>
+        <a href="/products/">View Products</a>
+    </div>
+    <div class="feature-card">
+        <h3>Track Inventory</h3>
+        <p>Stay up-to-date with real-time inventory management.</p>
+        <a href="/inventory/">View Inventory</a>
+    </div>
+    <div class="feature-card">
+        <h3>Order Management</h3>
+        <p>Effortlessly manage orders and their statuses.</p>
+        <a href="/orders/">View Orders</a>
+    </div>
+</section>
+{% endblock %}
